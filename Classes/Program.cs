@@ -15,5 +15,18 @@ product1.Category = category1;
 
 //overloading
 Product product2 = new Product(2, "Armut", 25, 10, "image2.jpg");
+Product product3 = new Product(3, "Karpuz", 25, 10, "image2.jpg");
 
-Console.WriteLine(product1.Name + "/"+product1.DiscountedPrice);
+//Console.WriteLine(product1.Name + "/"+product1.DiscountedPrice);
+
+ProductManager productManager = new ProductManager();
+productManager.Add(product1);
+productManager.Add(product2);
+productManager.Add(product3);
+
+productManager.Delete(new Product {Id=2 });
+
+foreach (var product in productManager.GetAll())
+{
+   Console.WriteLine(product.Name);
+}
