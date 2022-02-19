@@ -30,3 +30,11 @@ foreach (var product in productManager.GetAll())
 {
    Console.WriteLine(product.Name);
 }
+
+//Brand->Id,Name
+//Color->Id,Name
+//Car->Id,Name, DailyPrice, ModelYear, Brand,Color
+//Workshop2 isminde proje aç
+//Entity modellemesi yap
+//Dal ve manager yaz
+//Program.cs'de test et
