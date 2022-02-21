@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    public class Product
+    //inheritance
+    public class Product:Entity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public double UnitPrice { get; set; }
         public double DiscountRate { get; set; }

@@ -7,32 +7,39 @@ using System.Threading.Tasks;
 namespace Classes
 {
     //Business kodları buraya yazılır
+    //Bir katman diğerini new'leyemez
     public class ProductManager
     {
-        
-        EfProductDal productDal = new EfProductDal();
+
+        IProductDal _productDal;
+
+        public ProductManager(IProductDal productDal)
+        {
+            _productDal = productDal;
+        }
+
         public void Add(Product product) 
         { 
             //Kurallar
-            productDal.Add(product);
+            _productDal.Add(product);
         }
 
         public void Update(Product product)
         {
             //Kurallar
-            productDal.Update(product);
+            _productDal.Update(product);
         }
 
         public void Delete(Product product)
         {
             //Kurallar
-            productDal.Delete(product);
+            _productDal.Delete(product);
         }
 
         public List<Product> GetAll()
         {
             //Kurallar
-            return productDal.GetAll();
+            return _productDal.GetAll();
         }
     }
 }

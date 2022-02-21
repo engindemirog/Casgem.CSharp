@@ -6,25 +6,23 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    //SQL
-    //Dapper bir EF alternatifi
-    public class EfProductDal: IProductDal
+    public class DapperProductDal:IProductDal
     {
         List<Product> products;
 
-        public EfProductDal()
+        public DapperProductDal()
         {
             products = new List<Product>();
         }
         public List<Product> GetAll()
         {
-            return products;    
+            return products;
         }
 
-        public void Add(Product product) 
+        public void Add(Product product)
         {
             products.Add(product);
-            Console.WriteLine("Ef ile eklendi");
+            Console.WriteLine("Dapper ile eklendi");
         }
 
         public void Update(Product product)
@@ -35,7 +33,7 @@ namespace Classes
             productToUpdate.DiscountRate = product.DiscountRate;
             productToUpdate.ImageUrl = product.ImageUrl;
 
-            
+
         }
 
         public void Delete(Product product)

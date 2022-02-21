@@ -19,7 +19,7 @@ Product product3 = new Product(3, "Karpuz", 25, 10, "image2.jpg");
 
 //Console.WriteLine(product1.Name + "/"+product1.DiscountedPrice);
 
-ProductManager productManager = new ProductManager();
+ProductManager productManager = new ProductManager(new EfProductDal());
 productManager.Add(product1);
 productManager.Add(product2);
 productManager.Add(product3);
@@ -38,3 +38,11 @@ foreach (var product in productManager.GetAll())
 //Entity modellemesi yap
 //Dal ve manager yaz
 //Program.cs'de test et
+
+IProductDal productDal = new DapperProductDal();
+productDal.Add(product1);
+
+
+//Loglar veritabanına veya dosyaya alınabilir.
+//veritbanına loglandı
+//dosyaya loglandı
